@@ -48,7 +48,8 @@ dependencies
 {
     compile group: 'org.bukkit', name: 'bukkit', version: '1.8-R0.1-SNAPSHOT'
     compile group: 'net.milkbowl.vault', name: 'Vault', version: '1.5.0'
-    compile group: 'com.comphenix.protocol', name: 'ProtocolLib', version: '3.6.4-SNAPSHOT'
+    // compile group: 'com.comphenix.protocol', name: 'ProtocolLib', version: '3.6.4-SNAPSHOT'
+    compile group: 'com.comphenix.protocol', name: 'ProtocolLib', version: '3.6.4'
     compile files("libs/MarketCompanion-1.7.10-2.0.1.jar")
 }
 
