@@ -105,7 +105,12 @@ english:
         infinite: "<infinite>"
         mail_from: "From: "
         transaction_error: "<transaction error!>"
-        stacked: "<%1$s of %2$s>"
+        # Being VERY indecisive on which format variation to use for the new "total lots" readout
+        #stacked: "<%1$s of %2$s>"
+        #stacked: "<8 per lot, 16 lots, 9433 total>"
+        #stacked: "<8 of 9033 items, 192 lots>"
+        #stacked: "<192 lots with 8 each, 9033 total>"
+        stacked: "<%1$s of %2$s items, %3$s lots>"
         stacked_many: "many"
         sort_by: "Sort By..."
         sorting_by: "Sorting by: %s"

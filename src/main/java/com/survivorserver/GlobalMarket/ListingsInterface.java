@@ -233,15 +233,17 @@ public class ListingsInterface extends IMenu {
             lore.add(ChatColor.LIGHT_PURPLE + market.getLocale().get("interface.infinite"));
         }
 
+        // Count the number of duplicate item listings for display purposes
         int siblings = listing.countStacked();
         if (siblings > 0) {
             int count = 0;
-            if (siblings <= 15) {
-                for (Listing l : listing.getStacked()) {
-                    count += l.getAmount();
-                }
+            for (Listing l : listing.getStacked()) {
+                count += l.getAmount();
             }
-            lore.add(ChatColor.AQUA + market.getLocale().get("interface.stacked", listing.getAmount(), count > 0 ? (count + listing.getAmount()) : market.getLocale().get("interface.stacked_many")));
+            //lore.add(ChatColor.AQUA + market.getLocale().get("interface.stacked", listing.getAmount(), count > 0 ? (count + listing.getAmount()) : market.getLocale().get("interface.stacked_many")));
+            // (count + listing.getAmount()) adds the amount from the current listing, as COUNT reflects the total number of items in OTHER identical lots, NOT including this one
+            // (siblings+1) adds 1 to reflect this lot as well; siblings reflects the number of OTHER identical lots, NOT including this one
+            lore.add(ChatColor.AQUA + market.getLocale().get("interface.stacked", listing.getAmount(), (count + listing.getAmount()), (siblings+1) ));
         }
 
         meta.setLore(lore);
