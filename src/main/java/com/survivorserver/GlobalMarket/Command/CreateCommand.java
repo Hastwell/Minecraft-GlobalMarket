@@ -32,7 +32,7 @@ public class CreateCommand extends SubCommand {
 
     @Override
     public String[] getAliases() {
-        return new String[] {"list", "sell", "add"};
+        return new String[] {"sell", "add"};
     }
 
     @Override
