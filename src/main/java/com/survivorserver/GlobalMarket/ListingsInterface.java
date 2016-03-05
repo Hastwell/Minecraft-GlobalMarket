@@ -59,9 +59,10 @@ public class ListingsInterface extends IMenu {
                     viewer.setSort(SortMethod.DEFAULT);
                 }
                 YamlConfiguration playerConf = Market.market.getConfigHandler().getPlayerConfig(viewer.getViewer());
-                if (viewer.getSort() != SortMethod.DEFAULT) {
-                	playerConf.set("listings.sort_method", viewer.getSort().toString());
-                }
+                
+                // Save the current sort method REGARDLESS of if it's the default one. This will allow even the default setting to be chosen and saved.
+        	playerConf.set("listings.sort_method", viewer.getSort().toString());
+
                 handler.refreshViewer(viewer, viewer.getInterface().getName());
             }
         });
